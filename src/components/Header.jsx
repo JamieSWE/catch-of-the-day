@@ -18,6 +18,10 @@ const Header = ({ tagline }) => (
   </header>
 );
 
+Header.propTypes = {
+  tagline: PropTypes.string.isRequired,
+};
+
 export default Header;
 
 //WITHOUT DESTRUCTURING PROPS
