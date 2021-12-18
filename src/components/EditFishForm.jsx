@@ -18,7 +18,10 @@ class EditFishForm extends React.Component {
     //1. Take a copy of the current fish
     const updatedFish = {
       ...this.props.fish,
-      [e.currentTarget.name]: e.currentTarget.value,
+      [e.currentTarget.name]:
+        e.currentTarget.name === 'price'
+          ? parseFloat(e.currentTarget.value)
+          : e.currentTarget.value,
     };
     this.props.updateFish(this.props.index, updatedFish);
   };
@@ -34,7 +37,7 @@ class EditFishForm extends React.Component {
         />
         <input
           type='text'
-          name='price '
+          name='price'
           onChange={this.handleChange}
           value={this.props.fish.price}
         />
